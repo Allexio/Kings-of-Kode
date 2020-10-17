@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,13 +30,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        int image_id = context.getResources().getIdentifier(arrayList.get(position), "drawable", context.getPackageName());
+        int image_id = context.getResources().getIdentifier(arrayList.get(position % arrayList.size()), "drawable", context.getPackageName());
         holder.character_imageview.setImageResource(image_id);
     }
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return Integer.MAX_VALUE;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -49,3 +48,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 }
+
