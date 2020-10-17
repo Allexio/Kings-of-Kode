@@ -3,4 +3,16 @@
     <string name="start">Start</string>
     <string name="textview">TextView</string>
     <string name="selected_character">Selected Character</string>
+    <string name="die_1">die #1</string>
+    <string name="roll">roll</string>
+    <string name="leave">Leave the Matrix</string>
+    <string name="die_2">die #2</string>
+    <string name="die_3">die #3</string>
+    <string name="die_4">die #4</string>
+    <string name="die_5">die #5</string>
+    <string name="die_6">die #6</string>
+    <string name="static_matrix">static_matrix</string>
+    <string name="character_two">character_two</string>
+    <string name="character_portrait">character_portrait</string>
+    <string name="center_character_portrait">center_character_portrait</string>
 </resources>
