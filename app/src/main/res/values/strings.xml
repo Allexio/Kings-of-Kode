@@ -15,4 +15,11 @@
     <string name="character_two">character_two</string>
     <string name="character_portrait">character_portrait</string>
     <string name="center_character_portrait">center_character_portrait</string>
+    <string name="popularity_image">popularity_image</string>
+    <string name="_7">7</string>
+    <string name="_10">10</string>
+    <string name="_8">8</string>
+    <string name="research_image">research_image</string>
+    <string name="breaking_change_image">breaking_change_image</string>
+    <string name="fake_card">fake_card</string>
 </resources>
