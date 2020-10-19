@@ -10,16 +10,28 @@ class Character(name: String) {
         this.name =  name
     }
 
+    fun getCards():MutableList<Card> {
+        return cards
+    }
+
     fun addCard(card: Card) {
         cards.add(card)
     }
 
     fun beginTurn() {
-
+        for (card in cards) {
+            if (card.beginTurn()) {
+                break
+            }
+        }
     }
 
     fun endTurn() {
-
+        for (card in cards) {
+            if (card.endTurn()) {
+                break
+            }
+        }
     }
 
     fun isAlive():Boolean {
