@@ -1,14 +1,9 @@
 package com.example.kingsofkode.core
 
 class Die {
-    private var value:Int = 0
+    private var value:Int = (1..6).random()
 
     fun getValue():Int {
         return value
     }
-
-    fun roll() {
-
-    }
-
 }
