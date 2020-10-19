@@ -6,6 +6,14 @@ abstract class Card {
         return false
     }
 
+    open fun attack(): Boolean {
+        return false
+    }
+
+    open fun receiveDamages(): Boolean {
+        return false
+    }
+
     fun endTurn(): Boolean {
         return false
     }
