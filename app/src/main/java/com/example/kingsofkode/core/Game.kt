@@ -39,9 +39,7 @@ class Game {
     }
 
     fun roll() {
-        for (die in dice) {
-            die.roll()
-        }
+
     }
 
     fun buyCard(character:Character, card:Card):Boolean {
