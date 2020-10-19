@@ -1,11 +1,17 @@
 package com.example.kingsofkode.core
 
 class Character(name: String) {
-    var health = 10
-    var energy = 0
+    private var health = 10
+    private var energy = 0
+    private var name = ""
+    private var cards = mutableListOf<Card>()
 
-    fun addCard() {
+    init {
+        this.name =  name
+    }
 
+    fun addCard(card: Card) {
+        cards.add(card)
     }
 
     fun beginTurn() {
