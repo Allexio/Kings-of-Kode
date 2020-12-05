@@ -12,6 +12,8 @@ class Game {
 
     }
 
+
+
     fun hasWin():Boolean {
         var count = 0
         for (character in characters) {
