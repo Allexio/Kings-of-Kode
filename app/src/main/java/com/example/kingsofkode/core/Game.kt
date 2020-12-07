@@ -18,7 +18,11 @@ class Game(playerName: String) {
     var player:Character
     var showedCards = mutableListOf<Card>()
     var reRollCount = 0
-    var state = "" // running | loss | win
+    var state = "running" // running | loss | win
+    var playerTurn = true
+    var rollsRemaining = 0 // 2 | 1 | 0
+    var playerWasHit = false
+    var playerWasHitBy:Character
 
     val languages = Array(5) {
         "Go"
@@ -29,21 +33,19 @@ class Game(playerName: String) {
     }
 
     init {
+        val availableLanguages = languages.filter { it != playerName }
         this.initDice()
         this.player = Character(playerName)
+        this.currentPlayer = this.player
+        this.characters.add(this.player)
+        this.playerWasHitBy = this.player
 
-        this.currentPlayer = Character("")
-        this.king = Character("")
+        for (availableLanguage in availableLanguages) {
+            this.characters.add(Character(availableLanguage))
+        }
+        this.king = this.characters[(0 until 4).random()]
+    }
 
-        characters.add(Character(playerName))
-        this.state = "running";
-    }
-/*
-    fun launch(playerName: String) {
-        this.initDice()
-        characters.add(Character(playerName))
-    }
-*/
     private fun initDice() {
         for (i in 0..5) {
             this.dice[i] = "die"
@@ -51,6 +53,7 @@ class Game(playerName: String) {
     }
 
     fun reRoll(listUpdate: ArrayList<Int>) {
+        this.rollsRemaining--
         this.reRollCount++
         for (index in listUpdate) {
             val randomIndex = (0 until 6).random()
@@ -70,15 +73,30 @@ class Game(playerName: String) {
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
         this.currentPlayer.increaseHealth(healthTotal)
         this.currentPlayer.increaseEnergy(energyTotal)
+        this.rollsRemaining = 2
 
         if (this.currentPlayer == this.king) {
-            for (character in this.characters) {
-                if (character != this.currentPlayer) {
-                    character.decreaseHealth(attackTotal)
-                }
+            for (character in this.characters.filter { it != this.currentPlayer }) {
+                character.decreaseHealth(attackTotal)
             }
         } else {
             this.king.decreaseHealth(attackTotal)
+            if (this.player == this.king) {
+                this.playerWasHit = true
+                this.playerWasHitBy = this.currentPlayer
+            } else {
+                this.playerWasHit = false
+            }
+        }
+
+        if (!this.currentPlayer.isAlive()) {
+            this.state = "loss"
+            return
+        }
+
+        if (this.currentPlayer.score >= 10) {
+            this.state = if (this.currentPlayer == this.player) "win" else "loss"
+            return
         }
 
         val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
@@ -86,10 +104,15 @@ class Game(playerName: String) {
             this.currentPlayer = this.characters[0]
         } else {
             this.currentPlayer = this.characters[indexCurrentPlayer + 1]
+            this.playerTurn = this.currentPlayer == player
         }
     }
 
-    fun calculateScoreIncrement(oneTotal: Int, twoTotal: Int, threeTotal: Int):Int {
+    fun playerAbdicate() {
+        this.king = this.playerWasHitBy!!
+    }
+
+    private fun calculateScoreIncrement(oneTotal: Int, twoTotal: Int, threeTotal: Int):Int {
         var totalIncrement = 0
 
         if (oneTotal > 2) {
@@ -105,16 +128,6 @@ class Game(playerName: String) {
         }
 
         return totalIncrement
-    }
-
-    fun hasWin():Boolean {
-        var count = 0
-        for (character in characters) {
-            if (character.isAlive()) {
-                count++
-            }
-        }
-        return count == 1
     }
 
     fun buyCard(character:Character, card:Card):Boolean {
