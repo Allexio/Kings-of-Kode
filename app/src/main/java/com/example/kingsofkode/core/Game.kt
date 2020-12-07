@@ -23,6 +23,7 @@ class Game(playerName: String) {
     var rollsRemaining = 0 // 2 | 1 | 0
     var playerWasHit = false
     var playerWasHitBy:Character
+    var charactersAlive: Int = 3
 
     val languages = Array(5) {
         "Go"
@@ -78,9 +79,17 @@ class Game(playerName: String) {
         if (this.currentPlayer == this.king) {
             for (character in this.characters.filter { it != this.currentPlayer }) {
                 character.decreaseHealth(attackTotal)
+                if (!character.isAlive()) {
+                    this.charactersAlive--
+                }
             }
         } else {
             this.king.decreaseHealth(attackTotal)
+            if (!this.king.isAlive()) {
+                this.charactersAlive--
+                // TODO Replace king if he is dead
+            }
+
             if (this.player == this.king) {
                 this.playerWasHit = true
                 this.playerWasHitBy = this.currentPlayer
@@ -89,7 +98,7 @@ class Game(playerName: String) {
             }
         }
 
-        if (!this.currentPlayer.isAlive()) {
+        if (!this.player.isAlive()) {
             this.state = "loss"
             return
         }
@@ -108,7 +117,7 @@ class Game(playerName: String) {
         }
     }
 
-    fun playerAbdicate() {
+    fun playerAbdicates() {
         this.king = this.playerWasHitBy!!
     }
 
