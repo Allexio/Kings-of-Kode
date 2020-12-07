@@ -27,7 +27,7 @@ data class Character(val name: String) {
     }
 
     fun isAlive():Boolean {
-        return health != 0
+        return health > 0
     }
 
     fun isNearToDeath():Boolean {
