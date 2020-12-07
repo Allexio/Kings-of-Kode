@@ -1,18 +1,10 @@
 package com.example.kingsofkode.core
 
-class Character(name: String) {
-    private var health = 10
-    private var energy = 0
-    private var name = ""
-    private var cards = mutableListOf<Card>()
-
-    init {
-        this.name =  name
-    }
-
-    fun getCards():MutableList<Card> {
-        return cards
-    }
+data class Character(val name: String) {
+    var health = 10
+    var energy = 0
+    var score = 0
+    var cards = mutableListOf<Card>()
 
     fun addCard(card: Card) {
         cards.add(card)
@@ -42,23 +34,31 @@ class Character(name: String) {
         return health < 3
     }
 
-    fun decreaseEnergy() {
-        if (energy > 1) {
-            energy--
-        }
+    fun decreaseEnergy(amount: Int) {
+        this.energy -= amount
     }
 
-    fun increaseEnergy() {
-        energy++
+    fun increaseEnergy(amount: Int) {
+        this.energy += amount
     }
 
-    fun decreaseLife() {
-        if (health > 1) {
-            health--
-        }
+    fun decreaseHealth(amount: Int) {
+        this.health -= amount
     }
 
-    fun increaseLife() {
-        health++
+    fun increaseHealth(amount: Int) {
+        this.health += amount
+    }
+
+    fun increaseScore(amount: Int) {
+        this.score += amount
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (other?.javaClass != this.javaClass) return false
+
+        other as Character
+
+        return this.name == other.name
     }
 }
