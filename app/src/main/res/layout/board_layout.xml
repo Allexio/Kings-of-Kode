@@ -109,7 +109,7 @@
         app:layout_constraintStart_toEndOf="@+id/die1"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_research" />
+        app:srcCompat="@drawable/die_energy" />
 
     <ImageButton
         android:id="@+id/die3"
@@ -123,7 +123,7 @@
         app:layout_constraintStart_toEndOf="@+id/die1"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_intact" />
+        app:srcCompat="@drawable/die_health" />
 
     <ImageButton
         android:id="@+id/die4"
@@ -165,7 +165,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_break" />
+        app:srcCompat="@drawable/die_attack" />
 
     <ImageView
         android:id="@+id/matrix"
