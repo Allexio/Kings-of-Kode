@@ -121,11 +121,11 @@ class Game(playerName: String) {
         }
 
         if (twoTotal > 2) {
-            totalIncrement += oneTotal - 1
+            totalIncrement += twoTotal - 1
         }
 
         if (threeTotal > 2) {
-            totalIncrement += oneTotal
+            totalIncrement += threeTotal
         }
 
         return totalIncrement
