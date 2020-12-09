@@ -92,7 +92,8 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/die_1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/die_3" />
+                app:srcCompat="@drawable/die_3"
+                tools:ignore="NestedWeights" />
 
             <ImageButton
                 android:id="@+id/die2"
@@ -118,7 +119,8 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/die_3"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/die_health" />
+                app:srcCompat="@drawable/die_health"
+                tools:ignore="NestedWeights" />
 
             <ImageButton
                 android:id="@+id/die4"
@@ -143,7 +145,8 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/die_5"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/die_1" />
+                app:srcCompat="@drawable/die_1"
+                tools:ignore="NestedWeights" />
 
             <ImageButton
                 android:id="@+id/die6"
