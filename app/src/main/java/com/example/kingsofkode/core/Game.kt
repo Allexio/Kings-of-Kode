@@ -17,10 +17,9 @@ class Game(playerName: String) {
     var currentPlayer:Character
     var player:Character
     var showedCards = mutableListOf<Card>()
-    var reRollCount = 0
     var state = "running" // running | loss | win
     var playerTurn = true
-    var rollsRemaining = 0 // 2 | 1 | 0
+    var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
     var playerWasHitBy:Character
     var charactersAlive: Int = 3
@@ -48,14 +47,13 @@ class Game(playerName: String) {
     }
 
     private fun initDice() {
-        for (i in 0..5) {
+        for (i in 0..6) {
             this.dice[i] = "die"
         }
     }
 
     fun reRoll(listUpdate: ArrayList<Int>) {
         this.rollsRemaining--
-        this.reRollCount++
         for (index in listUpdate) {
             val randomIndex = (0 until 6).random()
             val diceName = this.diceNameList[randomIndex]
@@ -64,17 +62,18 @@ class Game(playerName: String) {
     }
 
     fun turn() {
-        this.reRollCount = 0
         val healthTotal = this.dice.count { it == "die_health" }
         val energyTotal = this.dice.count { it == "die_energy" }
         val attackTotal = this.dice.count { it == "die_attack" }
         val oneTotal = this.dice.count { it == "die_1" }
         val twoTotal = this.dice.count { it == "die_2" }
         val threeTotal = this.dice.count { it == "die_3" }
+        val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
+
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
         this.currentPlayer.increaseHealth(healthTotal)
         this.currentPlayer.increaseEnergy(energyTotal)
-        this.rollsRemaining = 2
+        this.rollsRemaining = 3
 
         if (this.currentPlayer == this.king) {
             for (character in this.characters.filter { it != this.currentPlayer }) {
@@ -108,7 +107,6 @@ class Game(playerName: String) {
             return
         }
 
-        val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
         if (indexCurrentPlayer == this.characters.size - 1) {
             this.currentPlayer = this.characters[0]
         } else {
