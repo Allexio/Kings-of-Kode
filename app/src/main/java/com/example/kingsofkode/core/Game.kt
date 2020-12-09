@@ -47,7 +47,7 @@ class Game(playerName: String) {
     }
 
     private fun initDice() {
-        for (i in 0..6) {
+        for (i in 0..5) {
             this.dice[i] = "die"
         }
     }
@@ -55,7 +55,7 @@ class Game(playerName: String) {
     fun reRoll(listUpdate: ArrayList<Int>) {
         this.rollsRemaining--
         for (index in listUpdate) {
-            val randomIndex = (0 until 6).random()
+            val randomIndex = (0 until 5).random()
             val diceName = this.diceNameList[randomIndex]
             this.dice[index] = diceName
         }
