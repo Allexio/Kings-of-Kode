@@ -1,15 +1,9 @@
 package com.example.kingsofkode.core
 
 class Game(playerName: String) {
-    private val diceNameList = Array(6) {
-        "die_1"
-        "die_2"
-        "die_3"
-        "die_attack"
-        "die_energy"
-        "die_health"
-    }
-    var dice = diceNameList.copyOf()
+    private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
+    val dice = diceNameList.copyOf()
+
     val characters = ArrayList<Character>()
     var cards = mutableListOf<Card>()
 
