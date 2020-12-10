@@ -100,7 +100,7 @@ class Game(playerName: String) {
             return
         }
 
-        if (this.currentPlayer.score >= 10) {
+        if (this.currentPlayer.score >= 20) {
             this.state = if (this.currentPlayer == this.player) "win" else "loss"
             return
         }

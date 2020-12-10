@@ -1,24 +1,10 @@
 package com.example.kingsofkode.core
 
-import com.example.kingsofkode.R
-
 data class Character(val name: String) {
     var health = 10
     var energy = 0
     var score = 0
     var cards = mutableListOf<Card>()
-    val imageRessourceId : Int
-
-    init {
-        when (name) {
-            "go" -> this.imageRessourceId = R.drawable.go
-            "java" -> this.imageRessourceId = R.drawable.java
-            "php" -> this.imageRessourceId = R.drawable.php
-            "python" -> this.imageRessourceId = R.drawable.python
-            "rust" -> this.imageRessourceId = R.drawable.rust
-            else -> this.imageRessourceId = 0
-        }
-    }
 
     fun addCard(card: Card) {
         cards.add(card)
