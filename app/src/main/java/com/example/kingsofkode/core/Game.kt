@@ -4,8 +4,9 @@ class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     val dice = diceNameList.copyOf()
 
-    private val languages = arrayOf("Go", "Python", "Rust", "Php", "Java")
+    private val languages = arrayOf("go", "python", "rust", "php", "java")
     val characters = ArrayList<Character>()
+    private val diceIndexList = ArrayList<Int>()
     var cards = mutableListOf<Card>()
 
     var king:Character
@@ -20,22 +21,27 @@ class Game(playerName: String) {
     var charactersAlive: Int = 3
 
     init {
-        val availableLanguages = languages.filter { it != playerName }
+        val availableLanguages = ArrayList<String>()
+        availableLanguages.addAll(languages.filter { it != playerName })
+
         this.initDice()
         this.player = Character(playerName)
         this.currentPlayer = this.player
         this.characters.add(this.player)
         this.playerWasHitBy = this.player
 
-        for (i in 0 until availableLanguages.size - 2) {
-            val availableLanguage = availableLanguages[i]
-            this.characters.add(Character(availableLanguage))
-        }
-        this.king = this.characters[(0 until 4).random()]
+        do {
+            val characterName = availableLanguages.random()
+            this.characters.add(Character(characterName))
+            availableLanguages.remove(characterName)
+        } while (this.characters.size != 4)
+
+        this.king = this.characters[(0 until 5).random()]
+        this.diceIndexList.addAll(0 until 6)
     }
 
     private fun initDice() {
-        for (i in 0..5) {
+        for (i in 0 until 6) {
             this.dice[i] = "die"
         }
     }
@@ -103,7 +109,13 @@ class Game(playerName: String) {
             this.currentPlayer = this.characters[0]
         } else {
             this.currentPlayer = this.characters[indexCurrentPlayer + 1]
-            this.playerTurn = this.currentPlayer == player
+
+            if (this.currentPlayer != this.player) {
+                this.roll(this.diceIndexList)
+                this.playerTurn = false
+            } else {
+                this.playerTurn = true
+            }
         }
     }
 
