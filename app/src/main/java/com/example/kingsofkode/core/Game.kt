@@ -48,7 +48,7 @@ class Game(playerName: String) {
 
     fun roll(listUpdate: ArrayList<Int>) {
         for (index in listUpdate) {
-            val randomIndex = (0 until 5).random()
+            val randomIndex = (0 until 6).random()
             val diceName = this.diceNameList[randomIndex]
             this.dice[index] = diceName
         }
