@@ -22,4 +22,6 @@
     <string name="research_image">research_image</string>
     <string name="breaking_change_image">breaking_change_image</string>
     <string name="fake_card">fake_card</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="gamestate">gameState</string>
 </resources>
