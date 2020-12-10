@@ -16,7 +16,7 @@ class Game(playerName: String) {
     var state = "running" // running | loss | win
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
-    // TODO: Fix playerWasHit sometimes triggering one turn late
+    // TODO: Fix playerWasHit sometimes triggering one turn late and sometimes triggering for no reason
     var playerWasHitBy:Character
     var charactersAlive: Int = 3
 

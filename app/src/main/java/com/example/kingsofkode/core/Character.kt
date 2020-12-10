@@ -48,6 +48,9 @@ data class Character(val name: String) {
 
     fun increaseHealth(amount: Int) {
         this.health += amount
+        if (this.health > 10) {
+            this.health = 10
+        }
     }
 
     fun increaseScore(amount: Int) {

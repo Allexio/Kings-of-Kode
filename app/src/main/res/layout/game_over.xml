@@ -50,11 +50,11 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,15 +71,15 @@
 
             <ImageView
                 android:id="@+id/firstPlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
                 android:layout_weight="1"
-                android:paddingLeft="80dip"
                 app:srcCompat="@drawable/go" />
 
             <TextView
                 android:id="@+id/firstScore"
-                android:layout_width="355dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
@@ -97,15 +97,16 @@
 
             <ImageView
                 android:id="@+id/secondPlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="80dip"
+                android:paddingRight="0dip"
                 app:srcCompat="@drawable/python" />
 
             <TextView
                 android:id="@+id/secondScore"
-                android:layout_width="355dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
@@ -123,15 +124,16 @@
 
             <ImageView
                 android:id="@+id/thirdPlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="80dip"
+                android:paddingRight="0dip"
                 app:srcCompat="@drawable/rust" />
 
             <TextView
                 android:id="@+id/thirdScore"
-                android:layout_width="355dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
@@ -149,15 +151,16 @@
 
             <ImageView
                 android:id="@+id/fourthPlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="80dip"
+                android:paddingRight="0dip"
                 app:srcCompat="@drawable/php" />
 
             <TextView
                 android:id="@+id/fourthScore"
-                android:layout_width="355dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
