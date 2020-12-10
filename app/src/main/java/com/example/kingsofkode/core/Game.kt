@@ -79,6 +79,7 @@ class Game(playerName: String) {
                 character.decreaseHealth(attackTotal)
                 if (!character.isAlive()) {
                     this.charactersAlive--
+                    // TODO: when NPC dies, check if all other NPCs are already dead, and if so, player wins
                 }
             }
         } else {
