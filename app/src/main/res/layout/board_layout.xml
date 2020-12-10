@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -30,7 +31,9 @@
         android:id="@+id/roll_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#00A32525"
         android:text="@string/roll"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -238,6 +241,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_7"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
         <ImageView
@@ -256,6 +260,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_10"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
         <ImageView
@@ -274,6 +279,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0.8"
             android:text="@string/_8"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
     </LinearLayout>
