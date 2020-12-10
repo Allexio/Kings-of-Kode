@@ -16,6 +16,7 @@ class Game(playerName: String) {
     var state = "running" // running | loss | win
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
+    // TODO: Fix playerWasHit sometimes triggering one turn late
     var playerWasHitBy:Character
     var charactersAlive: Int = 3
 
@@ -84,7 +85,7 @@ class Game(playerName: String) {
             this.king.decreaseHealth(attackTotal)
             if (!this.king.isAlive()) {
                 this.charactersAlive--
-                // TODO Replace king if he is dead
+                this.king = this.currentPlayer
             }
 
             if (this.player == this.king) {
