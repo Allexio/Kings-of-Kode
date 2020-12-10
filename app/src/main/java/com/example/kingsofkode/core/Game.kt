@@ -4,6 +4,7 @@ class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     val dice = diceNameList.copyOf()
 
+    private val languages = arrayOf("Go", "Python", "Rust", "Php", "Java")
     val characters = ArrayList<Character>()
     var cards = mutableListOf<Card>()
 
@@ -18,14 +19,6 @@ class Game(playerName: String) {
     var playerWasHitBy:Character
     var charactersAlive: Int = 3
 
-    val languages = Array(5) {
-        "Go"
-        "Python"
-        "Rust"
-        "Php"
-        "Java"
-    }
-
     init {
         val availableLanguages = languages.filter { it != playerName }
         this.initDice()
@@ -34,7 +27,8 @@ class Game(playerName: String) {
         this.characters.add(this.player)
         this.playerWasHitBy = this.player
 
-        for (availableLanguage in availableLanguages) {
+        for (i in 0 until availableLanguages.size - 2) {
+            val availableLanguage = availableLanguages[i]
             this.characters.add(Character(availableLanguage))
         }
         this.king = this.characters[(0 until 4).random()]
@@ -46,13 +40,17 @@ class Game(playerName: String) {
         }
     }
 
-    fun reRoll(listUpdate: ArrayList<Int>) {
-        this.rollsRemaining--
+    fun roll(listUpdate: ArrayList<Int>) {
         for (index in listUpdate) {
             val randomIndex = (0 until 5).random()
             val diceName = this.diceNameList[randomIndex]
             this.dice[index] = diceName
         }
+    }
+
+    fun reRoll(listUpdate: ArrayList<Int>) {
+        this.rollsRemaining--
+        this.roll(listUpdate)
     }
 
     fun turn() {
