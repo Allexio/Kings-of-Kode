@@ -14,7 +14,6 @@ class Game(playerName: String) {
     var player:Character
     var showedCards = mutableListOf<Card>()
     var state = "running" // running | loss | win
-    var playerTurn = true
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
     var playerWasHitBy:Character
@@ -36,7 +35,8 @@ class Game(playerName: String) {
             availableLanguages.remove(characterName)
         } while (this.characters.size != 4)
 
-        this.king = this.characters[(0 until 5).random()]
+        this.king = this.player
+        //this.king = this.characters[(0 until 5).random()]
         this.diceIndexList.addAll(0 until 6)
     }
 
@@ -112,9 +112,6 @@ class Game(playerName: String) {
 
             if (this.currentPlayer != this.player) {
                 this.roll(this.diceIndexList)
-                this.playerTurn = false
-            } else {
-                this.playerTurn = true
             }
         }
     }
