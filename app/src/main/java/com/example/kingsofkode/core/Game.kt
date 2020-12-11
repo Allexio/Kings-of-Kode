@@ -68,7 +68,7 @@ class Game(playerName: String) {
         val twoTotal = this.dice.count { it == "die_2" }
         val threeTotal = this.dice.count { it == "die_3" }
         val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
-
+        val playerHealthBeforeHits = this.player.health
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
         this.currentPlayer.increaseHealth(healthTotal)
         this.currentPlayer.increaseEnergy(energyTotal)
@@ -79,7 +79,10 @@ class Game(playerName: String) {
                 character.decreaseHealth(attackTotal)
                 if (!character.isAlive()) {
                     this.charactersAlive--
-                    // TODO: when NPC dies, check if all other NPCs are already dead, and if so, player wins
+                    if (this.charactersAlive == 1) {
+                        this.state = if (this.currentPlayer == this.player) "win" else "loss"
+                        return
+                    }
                 }
             }
         } else {
@@ -88,13 +91,13 @@ class Game(playerName: String) {
                 this.charactersAlive--
                 this.king = this.currentPlayer
             }
+        }
 
-            if (this.player == this.king) {
-                this.playerWasHit = true
-                this.playerWasHitBy = this.currentPlayer
-            } else {
-                this.playerWasHit = false
-            }
+        if (playerHealthBeforeHits > this.player.health) {
+            this.playerWasHit = true
+            this.playerWasHitBy = this.currentPlayer
+        } else {
+            this.playerWasHit = false
         }
 
         if (!this.player.isAlive()) {
