@@ -1,10 +1,14 @@
 package com.example.kingsofkode.core
 
+import android.graphics.drawable.Drawable
+import android.widget.ImageView
+
 data class Character(val name: String) {
     var health = 10
     var energy = 0
     var score = 0
     var cards = mutableListOf<Card>()
+    var currentImageView : ImageView? = null
 
     fun addCard(card: Card) {
         cards.add(card)
@@ -55,6 +59,22 @@ data class Character(val name: String) {
 
     fun increaseScore(amount: Int) {
         this.score += amount
+    }
+
+    fun setImageView(imageView: ImageView) {
+        this.currentImageView = imageView
+    }
+
+    fun activeView(drawable: Drawable?) {
+        if (this.currentImageView != null) {
+            this.currentImageView!!.background = drawable
+        }
+    }
+
+    fun disableView() {
+        if (this.currentImageView != null) {
+            this.currentImageView!!.setBackgroundResource(0)
+        }
     }
 
     override fun equals(other: Any?): Boolean {
