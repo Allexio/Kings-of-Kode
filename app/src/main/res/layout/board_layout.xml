@@ -104,6 +104,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_1"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_3"
                 tools:ignore="NestedWeights" />
@@ -114,6 +119,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_2"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_energy" />
 
@@ -131,6 +141,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_3"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_health"
                 tools:ignore="NestedWeights" />
@@ -141,6 +156,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_4"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_2" />
         </LinearLayout>
@@ -157,6 +177,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_5"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_1"
                 tools:ignore="NestedWeights" />
@@ -167,6 +192,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/die_6"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/die_attack" />
         </LinearLayout>
