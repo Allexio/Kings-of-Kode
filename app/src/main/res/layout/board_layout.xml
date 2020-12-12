@@ -334,7 +334,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <ImageView
-            android:id="@+id/table_card_1"
+            android:id="@+id/left_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -342,7 +342,7 @@
             app:srcCompat="@drawable/fake_card" />
 
         <ImageView
-            android:id="@+id/table_card_2"
+            android:id="@+id/center_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -350,7 +350,7 @@
             app:srcCompat="@drawable/fake_card" />
 
         <ImageView
-            android:id="@+id/table_card_3"
+            android:id="@+id/right_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

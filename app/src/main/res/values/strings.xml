@@ -24,4 +24,6 @@
     <string name="fake_card">fake_card</string>
     <string name="scoreboard">Scoreboard</string>
     <string name="gamestate">gameState</string>
+    <string name="back">Back</string>
+    <string name="purchase">Purchase</string>
 </resources>
