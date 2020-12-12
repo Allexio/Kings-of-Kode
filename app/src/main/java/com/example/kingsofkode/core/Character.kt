@@ -2,32 +2,18 @@ package com.example.kingsofkode.core
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.example.kingsofkode.models.CardModel
+import java.util.ArrayList
 
 data class Character(val name: String) {
     var health = 10
     var energy = 0
     var score = 0
-    var cards = mutableListOf<Card>()
+    var cards = ArrayList<CardModel>()
     var currentImageView : ImageView? = null
 
-    fun addCard(card: Card) {
+    fun addCard(card: CardModel) {
         cards.add(card)
-    }
-
-    fun beginTurn() {
-        for (card in cards) {
-            if (card.beginTurn()) {
-                break
-            }
-        }
-    }
-
-    fun endTurn() {
-        for (card in cards) {
-            if (card.endTurn()) {
-                break
-            }
-        }
     }
 
     fun isAlive():Boolean {

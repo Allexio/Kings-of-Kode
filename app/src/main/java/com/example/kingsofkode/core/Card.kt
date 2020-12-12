@@ -1,20 +1,10 @@
 package com.example.kingsofkode.core
 
-abstract class Card {
+abstract class Card(
+    val name: String,
+    val price: Int) {
 
-    open fun beginTurn(): Boolean {
-        return false
-    }
+    fun activate() {
 
-    open fun attack(): Boolean {
-        return false
-    }
-
-    open fun receiveDamages(): Boolean {
-        return false
-    }
-
-    fun endTurn(): Boolean {
-        return false
     }
 }

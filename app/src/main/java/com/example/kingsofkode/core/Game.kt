@@ -1,5 +1,9 @@
 package com.example.kingsofkode.core
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+import com.example.kingsofkode.models.CardModel
+
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     val dice = diceNameList.copyOf()
@@ -7,12 +11,13 @@ class Game(playerName: String) {
     private val languages = arrayOf("go", "python", "rust", "php", "java")
     val characters = ArrayList<Character>()
     private val diceIndexList = ArrayList<Int>()
-    var cards = mutableListOf<Card>()
+    var powerCardDeck = ArrayList<CardModel>()
+    var cardsInHand = ArrayList<CardModel>()
 
     var king:Character
     var currentPlayer:Character
     var player:Character
-    var showedCards = mutableListOf<Card>()
+
     var state = "running" // running | loss | win
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
@@ -39,6 +44,10 @@ class Game(playerName: String) {
         this.king = this.player
         //this.king = this.characters[(0 until 5).random()]
         this.diceIndexList.addAll(0 until 6)
+        // TODO Add real card to deck
+        addCardToDeck(CardModel("fake_card", 2))
+        addCardToDeck(CardModel("fake_card", 4))
+        addCardToDeck(CardModel("fake_card", 6))
     }
 
     private fun initDice() {
@@ -123,6 +132,22 @@ class Game(playerName: String) {
 
     fun playerAbdicates() {
         this.king = this.playerWasHitBy!!
+    }
+
+    fun removeCardFromDeck(name: String) {
+        powerCardDeck = powerCardDeck.filter { it.name != name } as ArrayList<CardModel>
+    }
+
+    fun addCardToDeck(card: CardModel) {
+        powerCardDeck.add(card)
+    }
+
+    fun removeCardFromHand(name: String) {
+        cardsInHand = cardsInHand.filter { it.name != name } as ArrayList<CardModel>
+    }
+
+    fun addCardToHand(card: CardModel) {
+        cardsInHand.add(card)
     }
 
     private fun calculateScoreIncrement(oneTotal: Int, twoTotal: Int, threeTotal: Int):Int {
