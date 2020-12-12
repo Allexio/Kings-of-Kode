@@ -6,12 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.kingsofkode.R
 import kotlinx.android.synthetic.main.card_zoom_fragment.view.*
 import com.example.kingsofkode.utils.Companion.getDrawableFromString
-
-
 
 class CardZoomFragment : DialogFragment() {
 
@@ -30,7 +26,7 @@ class CardZoomFragment : DialogFragment() {
 
     }
 
-    private lateinit var viewModel: SharedViewModel
+    private lateinit var onPurchaseCallback: () -> Unit
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +38,6 @@ class CardZoomFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         setupClickListeners(view)
         setupView(view)
     }
@@ -55,6 +50,10 @@ class CardZoomFragment : DialogFragment() {
         )
     }
 
+    fun setOnPurchaseCallback(onPurchaseCallback: () -> Unit) {
+        this.onPurchaseCallback = onPurchaseCallback
+    }
+
     private fun setupView(view: View) {
         // TODO: fix image not showing up
         var powerCardName = arguments?.getString(POWER_CARD_NAME)
@@ -63,7 +62,7 @@ class CardZoomFragment : DialogFragment() {
 
     private fun setupClickListeners(view: View) {
         view.btnPositive.setOnClickListener {
-            viewModel.purchase()
+            this.onPurchaseCallback()
             dismiss()
         }
         view.btnNegative.setOnClickListener {
