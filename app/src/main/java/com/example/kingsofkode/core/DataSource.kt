@@ -5,7 +5,7 @@ class DataSource {
         fun getCards(game: Game):ArrayList<Card> {
             val player = game.player
             val npcPlayers = game.characters.filter { it != player }
-            val highest_scoring_player = game.player // TODO: set this to be the actual top scoring player
+
 
             return arrayListOf(
                 Card("card_damage_2", 7) {
@@ -24,15 +24,25 @@ class DataSource {
                         }
                     }
                 },
+                Card("card_score_vampire_2", 7) {
+                    // Example this card hit all npc players of one
+                    var highestScoringPlayer = game.player
+                    var highestScore = 0
+                    for ( character in  game.characters) {
+                        if (!character.isAlive()) {
+                            continue
+                        }
+                        if (character.score > highestScore) {
+                            highestScore = character.score
+                            highestScoringPlayer = character
+                        }
+                    }
+                    player.score += 2
+                    highestScoringPlayer.score -= 2
+                },
                 Card("card_damage_3_king", 8) {
                     // Example this card hit all npc players of one
                     game.king.decreaseHealth(3)
-                },
-                Card("card_score_vampire_2", 6) {
-                    // Example this card hit all npc players of one
-
-                    player.score += 2
-                    highest_scoring_player.score -= 2
                 },
                 Card("card_score_3", 6) {
                     // Example this card hit all npc players of one
