@@ -7,11 +7,19 @@ class DataSource {
             val npcPlayers = game.characters.filter { it != player }
 
             return arrayListOf(
-                Card("fake_card", 3) {
+                Card("card_damage_2", 3) {
                     // Example this card hit all npc players of one
                     for (npcPlayer in npcPlayers) {
                         if (npcPlayer.isAlive()) {
-                            npcPlayer.decreaseHealth(1)
+                            npcPlayer.decreaseHealth(2)
+                        }
+                    }
+                },
+                Card("card_damage_3_all", 3) {
+                    // Example this card hit all npc players of one
+                    for (player in game.characters) {
+                        if (player.isAlive()) {
+                            player.decreaseHealth(3)
                         }
                     }
                 },
