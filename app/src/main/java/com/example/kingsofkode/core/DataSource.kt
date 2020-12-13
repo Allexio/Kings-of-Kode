@@ -18,8 +18,8 @@ class DataSource {
                 },
                 Card("card_damage_3_all", 7) {
                     // Example this card hit all npc players of one
-                    for (player in game.characters) {
-                        if (player.isAlive()) {
+                    for (character in game.characters) {
+                        if (character.isAlive()) {
                             player.decreaseHealth(3)
                         }
                     }
