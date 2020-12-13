@@ -6,8 +6,9 @@ class DataSource {
             val player = game.player
             val npcPlayers = game.characters.filter { it != player }
 
+
             return arrayListOf(
-                Card("card_damage_2", 3) {
+                Card("card_damage_2", 7) {
                     // Example this card hit all npc players of one
                     for (npcPlayer in npcPlayers) {
                         if (npcPlayer.isAlive()) {
@@ -15,13 +16,37 @@ class DataSource {
                         }
                     }
                 },
-                Card("card_damage_3_all", 3) {
+                Card("card_damage_3_all", 7) {
                     // Example this card hit all npc players of one
-                    for (player in game.characters) {
-                        if (player.isAlive()) {
+                    for (character in game.characters) {
+                        if (character.isAlive()) {
                             player.decreaseHealth(3)
                         }
                     }
+                },
+                Card("card_score_vampire_2", 7) {
+                    // Example this card hit all npc players of one
+                    var highestScoringPlayer = game.player
+                    var highestScore = 0
+                    for ( character in  game.characters) {
+                        if (!character.isAlive()) {
+                            continue
+                        }
+                        if (character.score > highestScore) {
+                            highestScore = character.score
+                            highestScoringPlayer = character
+                        }
+                    }
+                    player.score += 2
+                    highestScoringPlayer.score -= 2
+                },
+                Card("card_damage_3_king", 8) {
+                    // Example this card hit all npc players of one
+                    game.king.decreaseHealth(3)
+                },
+                Card("card_score_3", 6) {
+                    // Example this card hit all npc players of one
+                    player.score += 3
                 },
                 Card("card_health_3", 3) {
                     // Increase player heath by 3
