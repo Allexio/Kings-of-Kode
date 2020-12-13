@@ -26,4 +26,6 @@
     <string name="gamestate">gameState</string>
     <string name="back">Back</string>
     <string name="purchase">Purchase</string>
+    <string name="start_button_text">START</string>
+    <string name="help_button_text">\?</string>
 </resources>
