@@ -1,8 +1,7 @@
 package com.example.kingsofkode.core
 
-import android.os.Build
-import androidx.annotation.RequiresApi
-import com.example.kingsofkode.models.CardModel
+import com.example.kingsofkode.models.Card
+import com.example.kingsofkode.models.DataSource
 
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
@@ -11,8 +10,8 @@ class Game(playerName: String) {
     private val languages = arrayOf("go", "python", "rust", "php", "java")
     val characters = ArrayList<Character>()
     private val diceIndexList = ArrayList<Int>()
-    var powerCardDeck = ArrayList<CardModel>()
-    var cardsInHand = ArrayList<CardModel>()
+    var powerCardDeck = ArrayList<Card>()
+    var cardsInHand = ArrayList<Card>()
 
     var king:Character
     var currentPlayer:Character
@@ -44,10 +43,7 @@ class Game(playerName: String) {
         this.king = this.player
         //this.king = this.characters[(0 until 5).random()]
         this.diceIndexList.addAll(0 until 6)
-        // TODO Add real card to deck
-        addCardToDeck(CardModel("fake_card", 2))
-        addCardToDeck(CardModel("fake_card", 4))
-        addCardToDeck(CardModel("fake_card", 6))
+        this.powerCardDeck = DataSource.getCards(this)
     }
 
     private fun initDice() {
@@ -135,18 +131,18 @@ class Game(playerName: String) {
     }
 
     fun removeCardFromDeck(name: String) {
-        powerCardDeck = powerCardDeck.filter { it.name != name } as ArrayList<CardModel>
+        powerCardDeck = powerCardDeck.filter { it.name != name } as ArrayList<Card>
     }
 
-    fun addCardToDeck(card: CardModel) {
+    fun addCardToDeck(card: Card) {
         powerCardDeck.add(card)
     }
 
     fun removeCardFromHand(name: String) {
-        cardsInHand = cardsInHand.filter { it.name != name } as ArrayList<CardModel>
+        cardsInHand = cardsInHand.filter { it.name != name } as ArrayList<Card>
     }
 
-    fun addCardToHand(card: CardModel) {
+    fun addCardToHand(card: Card) {
         cardsInHand.add(card)
     }
 

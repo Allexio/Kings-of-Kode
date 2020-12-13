@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".BoardGameActivity"/>
-        <activity android:name=".GameOverActivity"/>
+        <activity android:name=".BoardGame.BoardGameActivity"/>
+        <activity android:name=".GameOver.GameOverActivity"/>
     </application>
 </manifest>

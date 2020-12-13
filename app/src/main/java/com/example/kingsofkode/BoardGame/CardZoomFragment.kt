@@ -1,4 +1,4 @@
-package com.example.kingsofkode
+package com.example.kingsofkode.BoardGame
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
+import com.example.kingsofkode.R
 import kotlinx.android.synthetic.main.card_zoom_fragment.view.*
 import com.example.kingsofkode.utils.Companion.getDrawableFromString
 
