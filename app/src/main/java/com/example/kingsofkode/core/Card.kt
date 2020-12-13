@@ -1,4 +1,4 @@
-package com.example.kingsofkode.models
+package com.example.kingsofkode.core
 
 class Card (
     val name:String,

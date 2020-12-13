@@ -1,8 +1,5 @@
 package com.example.kingsofkode.core
 
-import com.example.kingsofkode.models.Card
-import com.example.kingsofkode.models.DataSource
-
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     private val languages = arrayOf("go", "python", "rust", "php", "java")

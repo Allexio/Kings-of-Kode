@@ -1,6 +1,4 @@
-package com.example.kingsofkode.models
-
-import com.example.kingsofkode.core.Game
+package com.example.kingsofkode.core
 
 class DataSource {
     companion object {

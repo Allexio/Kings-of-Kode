@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kingsofkode.R
-import com.example.kingsofkode.models.Card
+import com.example.kingsofkode.core.Card
 import com.example.kingsofkode.utils
 import kotlinx.android.synthetic.main.card_list_item.view.*
 import java.util.ArrayList
