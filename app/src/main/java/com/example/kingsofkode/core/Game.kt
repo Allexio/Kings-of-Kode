@@ -41,6 +41,7 @@ class Game(playerName: String) {
         this.king = this.player
         this.diceIndexList.addAll(0 until 6)
         this.powerCardDeck = DataSource.getCards(this)
+        this.king.increaseScore(1)
     }
 
     private fun initDice() {
@@ -78,13 +79,6 @@ class Game(playerName: String) {
         this.rollsRemaining = 3
 
         if (this.currentPlayer == this.king) {
-            if (isFirstTurn) {
-                this.king.increaseScore(1)
-                isFirstTurn = false
-            } else {
-                this.king.increaseScore(2)
-            }
-
             for (character in this.characters.filter { it != this.currentPlayer }) {
                 character.decreaseHealth(attackTotal)
                 if (!character.isAlive() && updateState() != "running") {
@@ -123,6 +117,12 @@ class Game(playerName: String) {
             if (this.currentPlayer != this.player) {
                 this.roll(this.diceIndexList)
             }
+        }
+
+        if (isFirstTurn) {
+            isFirstTurn = false
+        } else if (this.currentPlayer == this.king){
+            this.king.increaseScore(2)
         }
     }
 
