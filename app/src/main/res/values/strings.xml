@@ -4,8 +4,10 @@
     <string name="textview">TextView</string>
     <string name="selected_character">Selected Character</string>
     <string name="die_1">die #1</string>
-    <string name="roll">ROLL</string>
-    <string name="leave">Leave the Matrix</string>
+    <string name="roll_button_roll">ROLL</string>
+    <string name="roll_button_re_roll">RE ROLL</string>
+    <string name="roll_button_next">NEXT TURN</string>
+    <string name="roll_button_submit">SUBMIT</string>
     <string name="die_2">die #2</string>
     <string name="die_3">die #3</string>
     <string name="die_4">die #4</string>

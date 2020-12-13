@@ -9,11 +9,10 @@ import androidx.fragment.app.DialogFragment
 import com.example.kingsofkode.R
 import com.example.kingsofkode.Utils
 import com.example.kingsofkode.core.Character
-import kotlinx.android.synthetic.main.card_zoom_fragment.view.*
 import kotlinx.android.synthetic.main.character_details_fragment.view.*
 import kotlinx.android.synthetic.main.character_details_fragment.view.popularity_points
 
-class CharacterDetailsFragment(val character: Character) : DialogFragment() {
+class CharacterDetailsFragment(private val character: Character) : DialogFragment() {
     companion object {
         const val TAG = "CharacterDetails"
     }
