@@ -7,7 +7,7 @@ data class Character(val name: String) {
     var health = 10
     var energy = 0
     var score = 0
-    private var currentImageView : ImageView? = null
+    var currentImageView : ImageView? = null
 
     fun isAlive():Boolean {
         return health > 0
