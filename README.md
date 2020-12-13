@@ -2,7 +2,7 @@
 
 # About King of Kode
 
-[![our app in action][game-screenshot]]
+![our app in action][game-screenshot]
 
 ## Rules
 
