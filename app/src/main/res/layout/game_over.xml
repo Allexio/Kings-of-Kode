@@ -25,7 +25,7 @@
         android:id="@+id/gameState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gamestate"
+        android:text="@string/gameState"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorPrimary"
         android:textSize="50sp"

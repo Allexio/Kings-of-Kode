@@ -53,8 +53,6 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
         itemView: View
     ): RecyclerView.ViewHolder(itemView) {
         private val imageView = itemView.image
-        private val nameView = itemView.name
-        private val priceView = itemView.price
 
         fun bind(card: Card, context: Context, onCardActivate: (card: Card) -> Unit) {
             imageView.setImageDrawable(
@@ -68,8 +66,6 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
                 card.activate()
                 onCardActivate(card)
             }
-            nameView.text = card.name
-            priceView.text = card.price.toString()
         }
     }
 }

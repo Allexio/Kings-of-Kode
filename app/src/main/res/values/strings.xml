@@ -25,7 +25,7 @@
     <string name="breaking_change_image">breaking_change_image</string>
     <string name="fake_card">fake_card</string>
     <string name="scoreboard">Scoreboard</string>
-    <string name="gamestate">gameState</string>
+    <string name="gameState">gameState</string>
     <string name="back">Back</string>
     <string name="purchase">Purchase</string>
     <string name="start_button_text">START</string>
@@ -35,4 +35,6 @@
     <string name="scoreboard_second_player_image">Second player image</string>
     <string name="scoreboard_third_player_image">Third player image</string>
     <string name="scoreboard_fourth_player_image">Fourth player image</string>
+    <string name="card_in_hand">card in hand</string>
+    <string name="selected_character_image">Selected character image</string>
 </resources>
