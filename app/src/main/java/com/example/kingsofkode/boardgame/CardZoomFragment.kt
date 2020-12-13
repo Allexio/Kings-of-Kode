@@ -3,6 +3,7 @@ package com.example.kingsofkode.boardgame
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
@@ -16,15 +17,16 @@ class CardZoomFragment : DialogFragment() {
 
         const val TAG = "CardZoom"
         private const val POWER_CARD_NAME = "POWER_CARD_NAME"
+        private const val CARD_BUYABLE = "CARD_BUYABLE"
 
-        fun newInstance(powerCardName: String): CardZoomFragment {
+        fun newInstance(powerCardName: String, cardIsBuyable: Boolean): CardZoomFragment {
             val args = Bundle()
             args.putString(POWER_CARD_NAME, powerCardName)
+            args.putBoolean(CARD_BUYABLE, cardIsBuyable)
             val fragment = CardZoomFragment()
             fragment.arguments = args
             return fragment
         }
-
     }
 
     private lateinit var onPurchaseCallback: () -> Unit
@@ -56,9 +58,12 @@ class CardZoomFragment : DialogFragment() {
     }
 
     private fun setupView(view: View) {
-        // TODO: fix image not showing up
         val powerCardName = arguments?.getString(POWER_CARD_NAME)
+        val cardIsBuyable = arguments?.getBoolean(CARD_BUYABLE)
         view.powerCardImage.setImageDrawable(this.context?.let { getDrawableFromString(it, powerCardName!!, resources) })
+        if (!cardIsBuyable!!) {
+            view.btnPositive.visibility = GONE
+        }
     }
 
     private fun setupClickListeners(view: View) {

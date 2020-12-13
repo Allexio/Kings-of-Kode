@@ -7,7 +7,7 @@ class DataSource {
             val npcPlayers = game.characters.filter { it != player }
 
             return arrayListOf(
-                Card("fake_card", 3) {
+                Card("fake_card3", 3) {
                     // Example this card hit all npc players of one
                     for (npcPlayer in npcPlayers) {
                         if (npcPlayer.isAlive()) {
@@ -15,7 +15,7 @@ class DataSource {
                         }
                     }
                 },
-                Card("fake_card", 2) {
+                Card("fake_card2", 2) {
                     // Increase player heath
                     val increaseValue = 3
                     if (player.health + increaseValue > 10) {
