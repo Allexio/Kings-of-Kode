@@ -38,7 +38,8 @@
                 android:layout_marginLeft="40dp"
                 android:layout_weight="0.5"
                 android:contentDescription="@string/popularity_image"
-                app:srcCompat="@drawable/popularity" />
+                app:srcCompat="@drawable/popularity"
+                tools:ignore="NestedWeights" />
 
             <TextView
                 android:id="@+id/popularity_points"
