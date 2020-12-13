@@ -5,7 +5,7 @@ import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 
-class utils {
+class Utils {
     companion object {
         fun getDrawableFromString(
             context: Context,

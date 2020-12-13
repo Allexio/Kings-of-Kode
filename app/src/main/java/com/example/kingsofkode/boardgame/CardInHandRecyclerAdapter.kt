@@ -1,4 +1,4 @@
-package com.example.kingsofkode.BoardGame
+package com.example.kingsofkode.boardgame
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kingsofkode.R
 import com.example.kingsofkode.core.Card
-import com.example.kingsofkode.utils
+import com.example.kingsofkode.Utils
 import kotlinx.android.synthetic.main.card_list_item.view.*
 import java.util.ArrayList
 
@@ -58,7 +58,7 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
 
         fun bind(card: Card, context: Context, onCardActivate: (card: Card) -> Unit) {
             imageView.setImageDrawable(
-                utils.getDrawableFromString(
+                Utils.getDrawableFromString(
                     context,
                     card.name,
                     context.resources

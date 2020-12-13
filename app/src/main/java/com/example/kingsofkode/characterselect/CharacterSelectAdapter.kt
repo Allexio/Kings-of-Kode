@@ -1,4 +1,4 @@
-package com.example.kingsofkode
+package com.example.kingsofkode.characterselect
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.kingsofkode.MyAdapter.MyViewHolder
+import com.example.kingsofkode.R
+import com.example.kingsofkode.characterselect.CharacterSelectAdapter.MyViewHolder
 import java.util.*
 
-class MyAdapter(private val context: Context, private val arrayList: ArrayList<String>) :
+class CharacterSelectAdapter(private val context: Context, private val arrayList: ArrayList<String>) :
     RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.character_list_item, parent, false)
