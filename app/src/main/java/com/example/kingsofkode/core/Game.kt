@@ -41,6 +41,7 @@ class Game(playerName: String) {
         this.king = this.player
         this.diceIndexList.addAll(0 until 6)
         this.powerCardDeck = DataSource.getCards(this)
+        this.king.increaseScore(1)
     }
 
     private fun initDice() {
@@ -69,7 +70,6 @@ class Game(playerName: String) {
         val oneTotal = this.dice.count { it == "die_1" }
         val twoTotal = this.dice.count { it == "die_2" }
         val threeTotal = this.dice.count { it == "die_3" }
-        val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
         val playerHealthBeforeHits = this.player.health
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
         if (this.currentPlayer != this.king) {
@@ -79,13 +79,6 @@ class Game(playerName: String) {
         this.rollsRemaining = 3
 
         if (this.currentPlayer == this.king) {
-            if (isFirstTurn) {
-                this.king.increaseScore(1)
-                isFirstTurn = false
-            } else {
-                this.king.increaseScore(2)
-            }
-
             for (character in this.characters.filter { it != this.currentPlayer }) {
                 character.decreaseHealth(attackTotal)
                 if (!character.isAlive() && updateState() != "running") {
@@ -110,14 +103,26 @@ class Game(playerName: String) {
             return
         }
 
-        if (indexCurrentPlayer == this.characters.size - 1) {
-            this.currentPlayer = this.characters[0]
-        } else {
-            this.currentPlayer = this.characters[indexCurrentPlayer + 1]
+        val charactersAlive = this.characters.filter { it.isAlive() }
+        if (charactersAlive.isEmpty() || charactersAlive.size == 1) {
+            updateState()
+            return
+        }
 
+        val indexCurrentPlayer = charactersAlive.indexOf(this.currentPlayer)
+        if (indexCurrentPlayer == charactersAlive.size - 1) {
+            this.currentPlayer = charactersAlive[0]
+        } else {
+            this.currentPlayer = charactersAlive[indexCurrentPlayer + 1]
             if (this.currentPlayer != this.player) {
                 this.roll(this.diceIndexList)
             }
+        }
+
+        if (isFirstTurn) {
+            isFirstTurn = false
+        } else if (this.currentPlayer == this.king){
+            this.king.increaseScore(2)
         }
     }
 
