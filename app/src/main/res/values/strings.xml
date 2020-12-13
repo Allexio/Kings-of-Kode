@@ -4,8 +4,10 @@
     <string name="textview">TextView</string>
     <string name="selected_character">Selected Character</string>
     <string name="die_1">die #1</string>
-    <string name="roll">ROLL</string>
-    <string name="leave">Leave the Matrix</string>
+    <string name="roll_button_roll">ROLL</string>
+    <string name="roll_button_re_roll">RE ROLL</string>
+    <string name="roll_button_next">NEXT TURN</string>
+    <string name="roll_button_submit">SUBMIT</string>
     <string name="die_2">die #2</string>
     <string name="die_3">die #3</string>
     <string name="die_4">die #4</string>
@@ -23,14 +25,16 @@
     <string name="breaking_change_image">breaking_change_image</string>
     <string name="fake_card">fake_card</string>
     <string name="scoreboard">Scoreboard</string>
-    <string name="gamestate">gameState</string>
+    <string name="gameState">gameState</string>
     <string name="back">Back</string>
     <string name="purchase">Purchase</string>
     <string name="start_button_text">START</string>
     <string name="help_button_text">\?</string>
-    <string name="help_text">KING OF KODE HELP \n\n This game is played against 3 AI enemies, and the goal is to win either by killing all of them, or by gaining 20 points. \n This is done by rolling 6 dice every turn. These dice are tap-able, which allows you to select some to re-throw up to two times per turn. \n Once you have thrown (and re-thrown) your dice, the enemies do the same. \n There are 6 die faces. 3 that let you score points, one that lets you attack enemies, one that heals you (when you are not the Kode King) and one that gives you research points to unlock power cards with. \n\n Every other rule can be gleaned from the official King of Tokyo manual <a href="https://www.iello.com/sites/default/files/2016-10/KingOfTokyo_2016_EN_Rules.pdf">here</a>.</string>
+    <string name="help_text">KING OF KODE HELP \n\nTo start the game, simply swipe left or right to select your character and then press start. This game is played against 3 AI enemies, and the goal is to win either by killing all of them, or by gaining 20 points. \nThis is done by rolling 6 dice every turn. These dice are tap-able, which allows you to select some to re-throw up to two times per turn. \nOnce you have thrown (and re-thrown) your dice, the enemies do the same. \nYou can tap a player at any time to view their information, and you can tap cards any time to buy them or use them. \n\n Basic game rules can be gleaned from the official King of Tokyo manual.</string>
     <string name="scoreboard_top_player_image">First Player image</string>
     <string name="scoreboard_second_player_image">Second player image</string>
     <string name="scoreboard_third_player_image">Third player image</string>
     <string name="scoreboard_fourth_player_image">Fourth player image</string>
+    <string name="card_in_hand">card in hand</string>
+    <string name="selected_character_image">Selected character image</string>
 </resources>

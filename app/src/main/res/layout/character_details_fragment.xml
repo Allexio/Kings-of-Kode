@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.3"
-            tools:srcCompat="@drawable/rust" />
+            tools:srcCompat="@drawable/rust"
+            android:contentDescription="@string/selected_character_image" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:contentDescription="@string/research_image"
-                app:srcCompat="@drawable/lightbulb" />
+                app:srcCompat="@drawable/light_bulb" />
 
             <TextView
                 android:id="@+id/research_points"

@@ -37,7 +37,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="ROLL"
+        android:text="@string/roll_button_roll"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         app:backgroundTint="@android:color/transparent"
@@ -290,7 +290,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:contentDescription="@string/research_image"
-            app:srcCompat="@drawable/lightbulb" />
+            app:srcCompat="@drawable/light_bulb" />
 
         <TextView
             android:id="@+id/research_points"
@@ -359,7 +359,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/card_recylcer_view"
+        android:id="@+id/card_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
