@@ -69,7 +69,6 @@ class Game(playerName: String) {
         val oneTotal = this.dice.count { it == "die_1" }
         val twoTotal = this.dice.count { it == "die_2" }
         val threeTotal = this.dice.count { it == "die_3" }
-        val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
         val playerHealthBeforeHits = this.player.health
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
         if (this.currentPlayer != this.king) {
@@ -110,11 +109,17 @@ class Game(playerName: String) {
             return
         }
 
-        if (indexCurrentPlayer == this.characters.size - 1) {
-            this.currentPlayer = this.characters[0]
-        } else {
-            this.currentPlayer = this.characters[indexCurrentPlayer + 1]
+        val charactersAlive = this.characters.filter { it.isAlive() }
+        if (charactersAlive.isEmpty() || charactersAlive.size == 1) {
+            updateState()
+            return
+        }
 
+        val indexCurrentPlayer = charactersAlive.indexOf(this.currentPlayer)
+        if (indexCurrentPlayer == charactersAlive.size - 1) {
+            this.currentPlayer = charactersAlive[0]
+        } else {
+            this.currentPlayer = charactersAlive[indexCurrentPlayer + 1]
             if (this.currentPlayer != this.player) {
                 this.roll(this.diceIndexList)
             }
