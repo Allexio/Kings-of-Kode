@@ -1,16 +1,18 @@
 package com.example.kingsofkode.core
 
-import java.util.*
 import kotlin.collections.ArrayList
 
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     private val languages = arrayOf("go", "python", "rust", "php", "java")
     private val diceIndexList = ArrayList<Int>()
+    private var cardsInHand = ArrayList<Card>()
+    private var playerWasHitBy:Character
+    private var isFirstTurn = true
+
     val dice = diceNameList.copyOf()
     val characters = ArrayList<Character>()
     var powerCardDeck = ArrayList<Card>()
-    var cardsInHand = ArrayList<Card>()
 
     var king:Character
     var currentPlayer:Character
@@ -19,8 +21,6 @@ class Game(playerName: String) {
     var state = "running" // running | loss | win
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
-    var playerWasHitBy:Character
-    var charactersAlive: Int = 3
 
     init {
         val availableLanguages = ArrayList<String>()
@@ -39,7 +39,6 @@ class Game(playerName: String) {
         } while (this.characters.size != 4)
 
         this.king = this.player
-        this.king = this.characters[(0 until 5).random()]
         this.diceIndexList.addAll(0 until 6)
         this.powerCardDeck = DataSource.getCards(this)
     }
@@ -73,25 +72,29 @@ class Game(playerName: String) {
         val indexCurrentPlayer = this.characters.indexOf(this.currentPlayer)
         val playerHealthBeforeHits = this.player.health
         this.currentPlayer.increaseScore(this.calculateScoreIncrement(oneTotal, twoTotal, threeTotal))
-        this.currentPlayer.increaseHealth(healthTotal)
+        if (this.currentPlayer != this.king) {
+            this.currentPlayer.increaseHealth(healthTotal)
+        }
         this.currentPlayer.increaseEnergy(energyTotal)
         this.rollsRemaining = 3
 
         if (this.currentPlayer == this.king) {
+            if (isFirstTurn) {
+                this.king.increaseScore(1)
+                isFirstTurn = false
+            } else {
+                this.king.increaseScore(2)
+            }
+
             for (character in this.characters.filter { it != this.currentPlayer }) {
                 character.decreaseHealth(attackTotal)
-                if (!character.isAlive()) {
-                    this.charactersAlive--
-                    if (this.charactersAlive == 1) {
-                        this.state = if (this.currentPlayer == this.player) "win" else "loss"
-                        return
-                    }
+                if (!character.isAlive() && updateState() != "running") {
+                    return
                 }
             }
         } else {
             this.king.decreaseHealth(attackTotal)
             if (!this.king.isAlive()) {
-                this.charactersAlive--
                 this.king = this.currentPlayer
             }
         }
@@ -103,13 +106,7 @@ class Game(playerName: String) {
             this.playerWasHit = false
         }
 
-        if (!this.player.isAlive()) {
-            this.state = "loss"
-            return
-        }
-
-        if (this.currentPlayer.score >= 20) {
-            this.state = if (this.currentPlayer == this.player) "win" else "loss"
+        if (updateState() != "running") {
             return
         }
 
@@ -124,8 +121,22 @@ class Game(playerName: String) {
         }
     }
 
+    fun updateState():String {
+        val npcAlive = this.characters.filter { it != this.player && it.isAlive() }
+        if (!this.player.isAlive()) {
+            this.state = "loss"
+        } else if (this.currentPlayer.score >= 20) {
+            this.state = if (this.currentPlayer == this.player) "win" else "loss"
+        } else if (npcAlive.isEmpty()) {
+            this.state = "win"
+        }
+
+        return this.state
+    }
+
     fun playerAbdicates() {
         this.king = this.playerWasHitBy
+        this.king.increaseScore(1)
     }
 
     fun removeCardFromDeck(name: String) {

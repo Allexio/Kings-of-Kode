@@ -1,13 +1,15 @@
 package com.example.kingsofkode.core
 
+import kotlin.collections.MutableList
+
 class DataSource {
     companion object {
         fun getCards(game: Game):ArrayList<Card> {
             val player = game.player
             val npcPlayers = game.characters.filter { it != player }
+            val cardsShuffled = arrayListOf<Card>()
 
-
-            return arrayListOf(
+            val cards = mutableListOf(
                 Card("card_damage_2", 7) {
                     // Example this card hit all npc players of one
                     for (npcPlayer in npcPlayers) {
@@ -61,6 +63,13 @@ class DataSource {
                     player.health += 5
                 }
             )
+            cards.shuffle()
+
+            for (card in cards) {
+                cardsShuffled.add(card)
+            }
+
+            return cardsShuffled
         }
     }
 }
