@@ -73,9 +73,14 @@
                 android:id="@+id/firstPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
+                android:paddingLeft="60dip"
+                android:paddingRight="20dip"
+                android:paddingEnd="20dip"
+                android:paddingStart="60dip"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/go" />
+                app:srcCompat="@drawable/go"
+                tools:ignore="NestedWeights"
+                android:contentDescription="@string/scoreboard_top_player_image" />
 
             <TextView
                 android:id="@+id/firstScore"
@@ -83,7 +88,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="20"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="55sp" />
 
@@ -100,9 +105,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingLeft="80dip"
-                android:paddingRight="0dip"
-                app:srcCompat="@drawable/python" />
+                android:paddingLeft="60dip"
+                android:paddingRight="20dip"
+                android:paddingEnd="20dip"
+                android:paddingStart="60dip"
+                app:srcCompat="@drawable/python"
+                tools:ignore="NestedWeights"
+                android:contentDescription="@string/scoreboard_second_player_image" />
 
             <TextView
                 android:id="@+id/secondScore"
@@ -110,7 +119,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="15"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="55sp" />
 
@@ -127,9 +136,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingLeft="80dip"
-                android:paddingRight="0dip"
-                app:srcCompat="@drawable/rust" />
+                android:paddingLeft="60dip"
+                android:paddingRight="20dip"
+                android:paddingEnd="20dip"
+                android:paddingStart="60dip"
+                app:srcCompat="@drawable/rust"
+                tools:ignore="NestedWeights"
+                android:contentDescription="@string/scoreboard_third_player_image" />
 
             <TextView
                 android:id="@+id/thirdScore"
@@ -137,7 +150,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="10"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="55sp" />
 
@@ -154,9 +167,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingLeft="80dip"
-                android:paddingRight="0dip"
-                app:srcCompat="@drawable/php" />
+                android:paddingLeft="60dip"
+                android:paddingRight="20dip"
+                android:paddingEnd="20dip"
+                android:paddingStart="60dip"
+                app:srcCompat="@drawable/php"
+                tools:ignore="NestedWeights"
+                android:contentDescription="@string/scoreboard_fourth_player_image" />
 
             <TextView
                 android:id="@+id/fourthScore"
@@ -164,7 +181,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="3"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="55sp" />
         </LinearLayout>

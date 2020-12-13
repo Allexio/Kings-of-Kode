@@ -29,4 +29,8 @@
     <string name="start_button_text">START</string>
     <string name="help_button_text">\?</string>
     <string name="help_text">KING OF KODE HELP \n\n This game is played against 3 AI enemies, and the goal is to win either by killing all of them, or by gaining 20 points. \n This is done by rolling 6 dice every turn. These dice are tap-able, which allows you to select some to re-throw up to two times per turn. \n Once you have thrown (and re-thrown) your dice, the enemies do the same. \n There are 6 die faces. 3 that let you score points, one that lets you attack enemies, one that heals you (when you are not the Kode King) and one that gives you research points to unlock power cards with. \n\n Every other rule can be gleaned from the official King of Tokyo manual <a href="https://www.iello.com/sites/default/files/2016-10/KingOfTokyo_2016_EN_Rules.pdf">here</a>.</string>
+    <string name="scoreboard_top_player_image">First Player image</string>
+    <string name="scoreboard_second_player_image">Second player image</string>
+    <string name="scoreboard_third_player_image">Third player image</string>
+    <string name="scoreboard_fourth_player_image">Fourth player image</string>
 </resources>
