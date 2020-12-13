@@ -57,7 +57,7 @@ class CardZoomFragment : DialogFragment() {
 
     private fun setupView(view: View) {
         // TODO: fix image not showing up
-        var powerCardName = arguments?.getString(POWER_CARD_NAME)
+        val powerCardName = arguments?.getString(POWER_CARD_NAME)
         view.powerCardImage.setImageDrawable(this.context?.let { getDrawableFromString(it, powerCardName!!, resources) })
     }
 

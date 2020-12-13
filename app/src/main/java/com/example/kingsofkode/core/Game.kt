@@ -5,11 +5,10 @@ import com.example.kingsofkode.models.DataSource
 
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
-    val dice = diceNameList.copyOf()
-
     private val languages = arrayOf("go", "python", "rust", "php", "java")
-    val characters = ArrayList<Character>()
     private val diceIndexList = ArrayList<Int>()
+    val dice = diceNameList.copyOf()
+    val characters = ArrayList<Character>()
     var powerCardDeck = ArrayList<Card>()
     var cardsInHand = ArrayList<Card>()
 
@@ -20,7 +19,6 @@ class Game(playerName: String) {
     var state = "running" // running | loss | win
     var rollsRemaining = 3 // 3 | 2 | 1 | 0
     var playerWasHit = false
-    // TODO: Fix playerWasHit sometimes triggering one turn late and sometimes triggering for no reason
     var playerWasHitBy:Character
     var charactersAlive: Int = 3
 
@@ -127,15 +125,11 @@ class Game(playerName: String) {
     }
 
     fun playerAbdicates() {
-        this.king = this.playerWasHitBy!!
+        this.king = this.playerWasHitBy
     }
 
     fun removeCardFromDeck(name: String) {
         powerCardDeck = powerCardDeck.filter { it.name != name } as ArrayList<Card>
-    }
-
-    fun addCardToDeck(card: Card) {
-        powerCardDeck.add(card)
     }
 
     fun removeCardFromHand(name: String) {
@@ -162,9 +156,5 @@ class Game(playerName: String) {
         }
 
         return totalIncrement
-    }
-
-    fun buyCard(character:Character, card:Card):Boolean {
-        return false
     }
 }

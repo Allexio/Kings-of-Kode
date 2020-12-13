@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.card_list_item.view.*
 import java.util.ArrayList
 
 class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
+    private lateinit var onCardActivate: (card: Card) -> Unit
     private var items = ArrayList<Card>()
 
     private lateinit var context: Context
@@ -26,7 +26,7 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
             is CardViewHolder -> {
-                holder.bind(items[position], context)
+                holder.bind(items[position], context, onCardActivate)
             }
         }
     }
@@ -45,6 +45,10 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
         this.notifyDataSetChanged()
     }
 
+    fun setOnCardActivate(onCardActivate: (card: Card) -> Unit) {
+        this.onCardActivate = onCardActivate
+    }
+
     class CardViewHolder constructor(
         itemView: View
     ): RecyclerView.ViewHolder(itemView) {
@@ -52,7 +56,7 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
         val nameView = itemView.name
         val priceView = itemView.price
 
-        fun bind(card: Card, context: Context) {
+        fun bind(card: Card, context: Context, onCardActivate: (card: Card) -> Unit) {
             imageView.setImageDrawable(
                 utils.getDrawableFromString(
                     context,
@@ -60,6 +64,10 @@ class CardInHandRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
                     context.resources
                 )
             )
+            imageView.setOnClickListener() {
+                card.activate()
+                onCardActivate(card)
+            }
             nameView.text = card.name
             priceView.text = card.price.toString()
         }

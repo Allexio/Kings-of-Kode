@@ -2,19 +2,12 @@ package com.example.kingsofkode.core
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import com.example.kingsofkode.models.Card
-import java.util.ArrayList
 
 data class Character(val name: String) {
     var health = 10
     var energy = 0
     var score = 0
-    var cards = ArrayList<Card>()
-    var currentImageView : ImageView? = null
-
-    fun addCard(card: Card) {
-        cards.add(card)
-    }
+    private var currentImageView : ImageView? = null
 
     fun isAlive():Boolean {
         return health > 0
