@@ -4,7 +4,7 @@
     <string name="textview">TextView</string>
     <string name="selected_character">Selected Character</string>
     <string name="die_1">die #1</string>
-    <string name="roll">roll</string>
+    <string name="roll">ROLL</string>
     <string name="leave">Leave the Matrix</string>
     <string name="die_2">die #2</string>
     <string name="die_3">die #3</string>
@@ -22,4 +22,8 @@
     <string name="research_image">research_image</string>
     <string name="breaking_change_image">breaking_change_image</string>
     <string name="fake_card">fake_card</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="gamestate">gameState</string>
+    <string name="back">Back</string>
+    <string name="purchase">Purchase</string>
 </resources>

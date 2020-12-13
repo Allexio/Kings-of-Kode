@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.54" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -26,57 +27,35 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7518248" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/roll_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/roll"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="ROLL"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:rippleColor="@color/colorPrimaryDark"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:strokeWidth="1dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.45" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/leave"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
@@ -85,87 +64,12 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <ImageButton
-        android:id="@+id/die1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_1"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:srcCompat="@drawable/die_3" />
-
-    <ImageButton
-        android:id="@+id/die2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_2"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/die1"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_research" />
-
-    <ImageButton
-        android:id="@+id/die3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_3"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/die1"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_1" />
-
-    <ImageButton
-        android:id="@+id/die4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_4"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/die3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/die1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_2" />
-
-    <ImageButton
-        android:id="@+id/die5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_5"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/die3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_1" />
-
-    <ImageButton
-        android:id="@+id/die6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/die_6"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/die_break" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
 
     <ImageView
         android:id="@+id/matrix"
@@ -177,13 +81,133 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/matrix" />
+        app:srcCompat="@drawable/sprite" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/die1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_1"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_3"
+                tools:ignore="NestedWeights" />
+
+            <ImageButton
+                android:id="@+id/die2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_2"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_energy" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/die3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_3"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_health"
+                tools:ignore="NestedWeights" />
+
+            <ImageButton
+                android:id="@+id/die4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_4"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/die5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_5"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_1"
+                tools:ignore="NestedWeights" />
+
+            <ImageButton
+                android:id="@+id/die6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/die_6"
+                android:background="#00FFFFFF"
+                android:paddingLeft="8sp"
+                android:paddingTop="8sp"
+                android:paddingRight="8sp"
+                android:paddingBottom="8sp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/die_attack" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline10">
@@ -217,11 +241,11 @@
         android:id="@+id/center_character"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/center_character_portrait"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
@@ -243,21 +267,22 @@
             android:id="@+id/popularity_image"
             android:layout_width="3dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
             android:layout_weight="0.5"
             android:contentDescription="@string/popularity_image"
-            app:srcCompat="@drawable/popularity"
-            android:layout_marginStart="40dp" />
+            app:srcCompat="@drawable/popularity" />
 
         <TextView
             android:id="@+id/popularity_points"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_7"
-            android:textSize="24sp"
-            android:layout_marginStart="10dp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/research_image"
@@ -271,11 +296,12 @@
             android:id="@+id/research_points"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_10"
-            android:textSize="24sp"
-            android:layout_marginStart="10dp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/breaking_change_image"
@@ -283,7 +309,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:contentDescription="@string/breaking_change_image"
-            app:srcCompat="@drawable/test_break" />
+            app:srcCompat="@drawable/life" />
 
         <TextView
             android:id="@+id/breaking_change_points"
@@ -293,6 +319,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0.8"
             android:text="@string/_8"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
     </LinearLayout>
@@ -307,7 +334,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <ImageView
-            android:id="@+id/table_card_1"
+            android:id="@+id/left_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -315,7 +342,7 @@
             app:srcCompat="@drawable/fake_card" />
 
         <ImageView
-            android:id="@+id/table_card_2"
+            android:id="@+id/center_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -323,12 +350,23 @@
             app:srcCompat="@drawable/fake_card" />
 
         <ImageView
-            android:id="@+id/table_card_3"
+            android:id="@+id/right_power_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/fake_card"
             app:srcCompat="@drawable/fake_card" />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/card_recylcer_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
