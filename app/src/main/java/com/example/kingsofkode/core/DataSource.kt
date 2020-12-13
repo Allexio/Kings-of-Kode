@@ -1,7 +1,5 @@
 package com.example.kingsofkode.core
 
-import kotlin.collections.MutableList
-
 class DataSource {
     companion object {
         fun getCards(game: Game):ArrayList<Card> {
