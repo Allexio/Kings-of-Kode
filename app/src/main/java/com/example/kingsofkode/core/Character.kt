@@ -13,10 +13,6 @@ data class Character(val name: String) {
         return health > 0
     }
 
-    fun isNearToDeath():Boolean {
-        return health < 3
-    }
-
     fun decreaseEnergy(amount: Int) {
         this.energy -= amount
     }
@@ -62,5 +58,14 @@ data class Character(val name: String) {
         other as Character
 
         return this.name == other.name
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + health
+        result = 31 * result + energy
+        result = 31 * result + score
+        result = 31 * result + (currentImageView?.hashCode() ?: 0)
+        return result
     }
 }
