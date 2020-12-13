@@ -1,5 +1,8 @@
 package com.example.kingsofkode.core
 
+import java.util.*
+import kotlin.collections.ArrayList
+
 class Game(playerName: String) {
     private val diceNameList = arrayOf("die_1", "die_2", "die_3", "die_attack", "die_energy", "die_health")
     private val languages = arrayOf("go", "python", "rust", "php", "java")
@@ -36,7 +39,7 @@ class Game(playerName: String) {
         } while (this.characters.size != 4)
 
         this.king = this.player
-        //this.king = this.characters[(0 until 5).random()]
+        this.king = this.characters[(0 until 5).random()]
         this.diceIndexList.addAll(0 until 6)
         this.powerCardDeck = DataSource.getCards(this)
     }
