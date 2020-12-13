@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/matrix" />
+        app:srcCompat="@drawable/sprite" />
 
     <LinearLayout
         android:layout_width="0dp"
