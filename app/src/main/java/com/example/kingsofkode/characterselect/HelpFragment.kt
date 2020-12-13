@@ -3,13 +3,10 @@ package com.example.kingsofkode.characterselect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.example.kingsofkode.R
-import kotlinx.android.synthetic.main.card_zoom_fragment.view.*
-import com.example.kingsofkode.Utils.Companion.getDrawableFromString
 import kotlinx.android.synthetic.main.help_fragment.view.*
 
 class HelpFragment : DialogFragment() {
@@ -17,10 +14,6 @@ class HelpFragment : DialogFragment() {
     companion object {
 
         const val TAG = "help"
-
-        fun newInstance(): HelpFragment {
-            return HelpFragment()
-        }
     }
 
     override fun onCreateView(
