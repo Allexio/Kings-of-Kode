@@ -40,12 +40,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/back"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="8dp"
-            app:rippleColor="@color/colorPrimaryDark"
-            app:strokeColor="@color/colorPrimaryDark"
+            app:rippleColor="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             app:strokeWidth="1dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -55,12 +55,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/purchase"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="8dp"
-            app:rippleColor="@color/colorPrimaryDark"
-            app:strokeColor="@color/colorPrimaryDark"
+            app:rippleColor="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary"
             app:strokeWidth="1dp" />
 
     </LinearLayout>

@@ -35,7 +35,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:text="START"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="36sp"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
@@ -43,8 +43,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:strokeColor="@color/colorPrimaryDark"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
         app:strokeWidth="2dp" />
 
 

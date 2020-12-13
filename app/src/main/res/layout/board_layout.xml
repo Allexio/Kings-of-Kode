@@ -38,7 +38,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="ROLL"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
@@ -46,8 +46,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:strokeColor="@color/colorPrimaryDark"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
         app:strokeWidth="1dp" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -281,7 +281,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_7"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
         <ImageView
@@ -300,7 +300,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="@string/_10"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
         <ImageView
@@ -319,7 +319,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0.8"
             android:text="@string/_8"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
     </LinearLayout>
