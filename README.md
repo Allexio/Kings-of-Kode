@@ -8,12 +8,12 @@
 
 ### Mobile Game Adaptation
 
-If you already know the base game rules, you may be wondering how you do the things you can do in the classic board game in this version.
-To select which dice to rethrow, simply tap the dice you want to re-throw, and the submit button will dynamically change to a "re roll" button.
+* If you already know the base game rules, you may be wondering how you do the things you can do in the classic board game in this version.
+* To select which dice to rethrow, simply tap the dice you want to re-throw, and the submit button will dynamically change to a "re roll" button.
 (Don't forget you can only do this twice!)
-To view information about a player (you or an enemy) simply tap their image. Your information will always be displayed in the middle lower section of the screen.
-To buy a card, tap one of the three cards in the middle of the screen, then select "purchase". The button will not appear if you do not have enough energy to buy it.
-To use a card, simply tap it from your hand cards section (bottom of the screen). There will be no prompt so be careful!
+* To view information about a player (you or an enemy) simply tap their image. Your information will always be displayed in the middle lower section of the screen.
+* To buy a card, tap one of the three cards in the middle of the screen, then select "purchase". The button will not appear if you do not have enough energy to buy it.
+* To use a card, simply tap it from your hand cards section (bottom of the screen). There will be no prompt so be careful!
 
 ### Basic Rules
 
